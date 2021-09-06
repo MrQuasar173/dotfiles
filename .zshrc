@@ -116,7 +116,8 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LESSHISTFILE=-
 
 # Aliases
-
+file=$(\ls ~/.config/neofetch/ascii|shuf -n 1)
+alias neofetch='neofetch --source ~/.config/neofetch/ascii/$file' # theme neofetch art after halflife/portal series because i'm a nerd
 alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' # Make dotfiles managment easy with git bare
 alias grep='grep --color=auto' # add color to grep
 alias vim='nvim' # Use neovim, the modern and faster vim 
