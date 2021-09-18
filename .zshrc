@@ -117,14 +117,34 @@ export LESSHISTFILE=-
 
 # Aliases
 file=$(\ls ~/.config/neofetch/ascii|shuf -n 1)
-alias neofetch='neofetch --source ~/.config/neofetch/ascii/$file' # theme neofetch art after halflife/portal series because i'm a nerd
+alias nerdfetch='neofetch --source ~/.config/neofetch/ascii/$file' # theme neofetch art after halflife/portal series because i'm a nerd
 alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' # Make dotfiles managment easy with git bare
 alias grep='grep --color=auto' # add color to grep
 alias vim='nvim' # Use neovim, the modern and faster vim 
 alias zshrc='nvim ~/.zshrc' # Quickly open this file
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash' # Rickroll in terminal
+# quicker cd
+alias ...='cd ../..' 
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+# pacman
+alias pacs='pacman -S'
+alias pacrm='pacman -R'
+alias pacu='pacman -Syu'
+alias pacfix='pacman -Syyy'
+# git
+alias addall='git add .'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -m'
+alias fetch='git fetch'
+alias pull='git pull origin'
+alias push='git push origin'
 command -v lsd > /dev/null && alias ls='lsd -l --group-dirs first' # Use lsd, the command line utility not the drug 
 # (it makes the ls output look nice)
 
 # Startup commands
-neofetch
+nerdfetch
 fortune|cowsay -f $(\ls /usr/share/cows|shuf -n 1)|lolcat # generates a random rainbow cowsay character saying something random
