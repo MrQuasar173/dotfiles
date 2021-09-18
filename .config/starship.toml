@@ -1,0 +1,50 @@
+#    __________  _   _   _    ____    _    ____  ________
+#  / / / / / _ \| | | | / \  / ___|  / \  |  _ \ \ \ \ \ \
+# / / / / / | | | | | |/ _ \ \___ \ / _ \ | |_) | \ \ \ \ \
+# \ \ \ \ \ |_| | |_| / ___ \ ___) / ___ \|  _ <  / / / / /
+#  \_\_\_\_\__\_\\___/_/   \_\____/_/   \_\_| \_\/_/_/_/_/
+
+# My Starship prompt for the fish shell. 
+
+format = """
+$username\
+$hostname\
+$directory\
+$kubernetes\
+$docker_context\
+$helm\
+$git_branch\
+$git_state\
+$git_status\
+$package\
+$python\
+$rust\
+$cmake\
+$golang\
+$ruby\
+$java\
+$perl\
+$lua\
+$vagrant\
+$memory_usage\
+$jobs\
+$cmd_duration\
+$battery\
+$character"""
+
+
+[[battery.display]]
+threshold = 50
+style = "bold purple"
+[kubernetes]
+format = 'on [⛵ $context \($namespace\)](dimmed green) '
+disabled = false
+[vagrant]
+format = "via [⍱ $version](bold white) "
+[memory_usage]
+disabled = false
+threshold = 50
+style = "bold dimmed green"
+[line_break]
+disabled = true
+
