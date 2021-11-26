@@ -23,7 +23,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to oh-my-zsh installation.
-export ZSH="/root/.oh-my-zsh" # WARNING: please change "root" to "home". I made this configuration in WSL which makes you stay as root  permanently
+export ZSH="/home/.oh-my-zsh" # WARNING: please change "root" to "home". I made this configuration in WSL which makes you stay as root  permanently
 
 # Load powerlevel10k, the amazing and beautiful prompt
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -53,13 +53,13 @@ plugins=(
     )
 
 # Make sure oh-my-zsh is actually being loaded and used
-source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
  else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
  fi
 
 # NOT MY CODE: quickly extract compressed files with custom command
@@ -133,6 +133,7 @@ alias pacs='pacman -S'
 alias pacrm='pacman -R'
 alias pacu='pacman -Syu'
 alias pacfix='pacman -Syyy'
+alias unlock="sudo rm /var/lib/pacman/db.lck"
 # git
 alias addall='git add .'
 alias branch='git branch'
@@ -144,6 +145,49 @@ alias pull='git pull origin'
 alias push='git push origin'
 command -v lsd > /dev/null && alias ls='lsd -l --group-dirs first' # Use lsd, the command line utility not the drug 
 # (it makes the ls output look nice)
+
+##Cmatrix astheticz
+alias matrix='cmatrix -s -C cyan'
+
+#iso and version used to install ArcoLinux
+alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+
+#systeminfo
+alias probe="sudo -E hw-probe -all -upload"
+
+#available free memory
+alias free="free -mt"
+
+#continue download
+alias wget="wget -c"
+
+#readable output
+alias df='df -h'
+
+#userlist
+alias userlist="cut -d: -f1 /etc/passwd"
+
+#Speeeeedy mirrors
+#get fastest mirrors in your neighborhood
+alias ram='rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist'
+alias reft='sudo systemctl enable reflector.service reflector.timer && sudo systemctl start reflector.service reflector.timer'
+
+# XeroLinux software control
+#Paru as aur helper - updates everything
+alias pget='paru -S '
+alias prm='paru -Rs '
+alias psr='paru -Ss '
+alias upall='paru -Syyu --noconfirm'
+
+#Flatpak Update
+alias fpup='flatpak update'
+
+#Snap Update
+alias sup='sudo snap refresh'
+
+#grub update
+alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
 
 # Startup commands
 nerdfetch
