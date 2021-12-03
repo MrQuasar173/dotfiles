@@ -7,7 +7,7 @@
 # Mr. Quasar 173's zsh configuration!
 # Some dependancies are required. These incluse [Oh-My-zsh, Powerlevel10k, Nerdfonts, lsd(better LS), lolcat, neofetch, fortune, cowsay,
 # zsh-autosuggestions(zsh plugin), and zsh-syntax-highlighting (zsh plugin)]
-# I know it's a LOT of dependancies, and I hate having to install a lot of dependancies when I download one thing just to make it 
+# I know it's a LOT of dependancies, and I hate having to install a lot of dependancies when I download one thing just to make it. 
 # work, but this is my personal configuration using things I already have on my system. If you want to use this as a template to
 # build your own config, cool! If you want it to look exactly like mine, just install the stuff above :D 
 
@@ -23,7 +23,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to oh-my-zsh installation.
-export ZSH="/home/.oh-my-zsh" # WARNING: please change "root" to "home". I made this configuration in WSL which makes you stay as root  permanently
+export ZSH="/home/eli/.oh-my-zsh" # WARNING: please change "root" to "home". I made this configuration in WSL which makes you stay as root  permanently
 
 # Load powerlevel10k, the amazing and beautiful prompt
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -62,6 +62,8 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
    export EDITOR='nvim'
  fi
 
+# Make snaps work
+export PATH=$PATH:/snap/bin
 # NOT MY CODE: quickly extract compressed files with custom command
 function extract {
  if [ -z "$1" ]; then
@@ -188,7 +190,9 @@ alias sup='sudo snap refresh'
 #grub update
 alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
+alias saycow='fortune|cowsay -f $(\ls /usr/share/cows|shuf -n 1)|lolcat' # description below cause im too lazy to move it up here
 
 # Startup commands
 nerdfetch
-fortune|cowsay -f $(\ls /usr/share/cows|shuf -n 1)|lolcat # generates a random rainbow cowsay character saying something random
+# saycow # generates a random rainbow cowsay character saying something random
+figlet -c "<<<QUASAR>>>" | lolcat
