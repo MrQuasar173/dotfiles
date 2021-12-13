@@ -193,6 +193,6 @@ alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias saycow='fortune|cowsay -f $(\ls /usr/share/cows|shuf -n 1)|lolcat' # description below cause im too lazy to move it up here
 
 # Startup commands
-nerdfetch
+neofetch
 # saycow # generates a random rainbow cowsay character saying something random
 figlet -c "<<<QUASAR>>>" | lolcat
