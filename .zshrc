@@ -192,6 +192,11 @@ alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias saycow='fortune|cowsay -f $(\ls /usr/share/cows|shuf -n 1)|lolcat' # description below cause im too lazy to move it up here
 
+alias mine='sudo ./~/trex/ETH-ethermine.sh' # Mine etherium in the ethermine pool with t-rex
+# Please don't kill me I hate the shortage just as much as you do and have suffered from it, 
+# I am just mining on the side while I'm not using this computer but more often I have actual
+# legit uses for my GPU :)
+#
 # Startup commands
 neofetch
 # saycow # generates a random rainbow cowsay character saying something random
