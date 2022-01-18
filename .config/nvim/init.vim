@@ -35,7 +35,7 @@ Plug 'tpope/vim-fugitive' " Git plugin
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " COC code completeion and git statuses
 Plug 'jiangmiao/auto-pairs' " Auto close bracket pairs 
 Plug 'wakatime/vim-wakatime' " Interesting coding stats
-
+Plug 'mengelbrecht/lightline-bufferline' "Tabs
 call plug#end()
 
 " Colors
@@ -58,7 +58,8 @@ set hidden " not setting hidden can cause several other settings and pluggins to
 set smartcase " Make code look nice (upercase and lowercase letters)
 set smartindent " Make code look nice (IDE-style auto indenting)
 set cmdheight=2 " More room for messages and commandsm
-set timeoutlen=500 " shorten timeout lengt
+set timeoutlen=500 " shorten timeout length
+set mouse=a
 " Let's save undo info! (not my code)
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0770)
@@ -174,6 +175,10 @@ let g:lightline = {
   \               [ 'percent' ],
   \               [ 'filepath', 'fileencoding', 'filetype' ]]
   \   },
+\ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
 	\   'component': {
 	\     'lineinfo': ' %3l:%-2v%<',
     \     'charvaluehex': ' 0x%B',
@@ -186,7 +191,13 @@ let g:lightline = {
         \ 'R' : ' REPLACE',
         \ 'v' : ' VISUAL',
         \ 'c' : ' COMMAND',
-        \ }
+        \ },
+ \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
 \  }
 let g:lightline.separator = {
 	\   'left': '', 'right': ''
@@ -194,7 +205,35 @@ let g:lightline.separator = {
 let g:lightline.subseparator = {
 	\   'left': '', 'right': '' 
   \}
+" Tabline stuff
+set showtabline=2
+let g:lightline#bufferline#modified = "  "
+let g:lightline#bufferline#read_only = "  "
+let g:lightline#bufferline#show_number = "2"
+let g:lightline#bufferline#enable_devicons= "1"
 
+"Tabbing shortcuts
+nmap <Leader>t1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>t2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>t3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>t4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>t5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>t6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>t7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>t8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>t9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>t0 <Plug>lightline#bufferline#go(10)
+
+nmap <Leader>c1 <Plug>lightline#bufferline#delete(1)
+nmap <Leader>c2 <Plug>lightline#bufferline#delete(2)
+nmap <Leader>c3 <Plug>lightline#bufferline#delete(3)
+nmap <Leader>c4 <Plug>lightline#bufferline#delete(4)
+nmap <Leader>c5 <Plug>lightline#bufferline#delete(5)
+nmap <Leader>c6 <Plug>lightline#bufferline#delete(6)
+nmap <Leader>c7 <Plug>lightline#bufferline#delete(7)
+nmap <Leader>c8 <Plug>lightline#bufferline#delete(8)
+nmap <Leader>c9 <Plug>lightline#bufferline#delete(9)
+nmap <Leader>c0 <Plug>lightline#bufferline#delete(10)
 " Hide statusline when whichkey menu is open (not my code)
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
