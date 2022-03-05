@@ -257,6 +257,11 @@ _G.packer_plugins = {
     path = "/home/eli/.local/share/nvim/site/pack/packer/start/vim-wakatime",
     url = "https://github.com/wakatime/vim-wakatime"
   },
+  vimsence = {
+    loaded = true,
+    path = "/home/eli/.local/share/nvim/site/pack/packer/start/vimsence",
+    url = "https://github.com/vimsence/vimsence"
+  },
   ["which-key.nvim"] = {
     config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20quasar.whichkey\frequire\0" },
     keys = { { "", "<Space>" } },
@@ -278,8 +283,8 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> <Space> <cmd>lua require("packer.load")({'which-key.nvim'}, { keys = "<lt>Space>", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <C-\> <cmd>lua require("packer.load")({'toggleterm.nvim'}, { keys = "<lt>C-\\>", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> <Space> <cmd>lua require("packer.load")({'which-key.nvim'}, { keys = "<lt>Space>", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]

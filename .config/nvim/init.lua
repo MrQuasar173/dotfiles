@@ -31,9 +31,8 @@ require "quasar.lsp" -- Language support
 require "quasar.tresitter" -- Syntax highlighting
 require "quasar.autopairs" -- autopairs
 require "quasar.misc" -- extra settings
--- require "quasar.lightline" -- Statusline + tabline
 require "quasar.gitsigns" -- Git info
 require "quasar.nvimtree" -- Quick file tree
-require "quasar.lualine"
-require "quasar.bufferline"
+require "quasar.lualine" --statusline
+require "quasar.bufferline" --tabline
 -- More configuration is done than what is called here because files call each other. Read README.MD for a full summary of this configuration

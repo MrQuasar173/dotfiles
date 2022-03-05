@@ -65,23 +65,24 @@ return packer.startup(function(use)
     use "preservim/nerdcommenter" -- Toggle comments on one or more lines
     use "windwp/nvim-autopairs" -- Auto close bracket pairs
     use "wakatime/vim-wakatime" -- Interesting coding stats
-    use "kaicataldo/material.vim"
-    use {"hrsh7th/nvim-cmp", requires = {"hrsh7th/cmp-path", "petertriho/cmp-git", "hrsh7th/cmp-buffer", "saadparwaiz1/cmp_luasnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-cmdline"}}
-    use {"tzachar/cmp-tabnine", opt = true, run = "./install.sh", config = function() require('quasar.tabnine') end}
-    use {"L3MON4D3/LuaSnip", requires = {"rafamadriz/friendly-snippets"}}
-    use {"neovim/nvim-lspconfig", requires = "williamboman/nvim-lsp-installer"}
-    use {'saecki/crates.nvim', event = { "BufRead Cargo.toml" }, config = function() require('crates').setup() end, }
-    use {"nvim-telescope/telescope.nvim", cmd = "Telescope", config = function () require'quasar.telescope' end}
-    use "nvim-treesitter/nvim-treesitter"
-    use "p00f/nvim-ts-rainbow"
-    use "lewis6991/gitsigns.nvim"
-    use {"akinsho/toggleterm.nvim", cmd = {"ToggleTerm"}, keys = "<C-\\>", config = function() require'quasar.toggleterm' end}
-    use {'iamcco/markdown-preview.nvim', ft = {"md", "markdown", "MD"}}
-    use {'folke/which-key.nvim', keys = "<Space>", config = function() require'quasar.whichkey' end}
-    use 'simrat39/rust-tools.nvim'
-    use "mfussenegger/nvim-dap"
-    use 'nvim-lualine/lualine.nvim'
-    use 'akinsho/bufferline.nvim'
+    use "kaicataldo/material.vim" -- the amazing material (containing palenight and ocean) colorschemes!
+    use {"hrsh7th/nvim-cmp", requires = {"hrsh7th/cmp-path", "petertriho/cmp-git", "hrsh7th/cmp-buffer", "saadparwaiz1/cmp_luasnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-cmdline"}} --autocomplete
+    use {"tzachar/cmp-tabnine", opt = true, run = "./install.sh", config = function() require('quasar.tabnine') end} --tabnine ai, takes up more resources
+    use {"L3MON4D3/LuaSnip", requires = {"rafamadriz/friendly-snippets"}} --snippets
+    use {"neovim/nvim-lspconfig", requires = "williamboman/nvim-lsp-installer"} --LSP
+    use {'saecki/crates.nvim', event = { "BufRead Cargo.toml" }, config = function() require('crates').setup() end, } --rust crate tools and features
+    use {"nvim-telescope/telescope.nvim", cmd = "Telescope", config = function () require'quasar.telescope' end} --telescope fuzzy search
+    use "nvim-treesitter/nvim-treesitter" -- treesitter advanced syntax highlighting
+    use "p00f/nvim-ts-rainbow" --ranbow brackets
+    use "lewis6991/gitsigns.nvim" --git info
+    use {"akinsho/toggleterm.nvim", cmd = {"ToggleTerm"}, keys = "<C-\\>", config = function() require'quasar.toggleterm' end} -- quick in-edditor terminal
+    use {'iamcco/markdown-preview.nvim', ft = {"md", "markdown", "MD"}} -- preview markdown files
+    use {'folke/which-key.nvim', keys = "<Space>", config = function() require'quasar.whichkey' end} -- list of possible keybinds a few seconds after hitting a key
+    use 'simrat39/rust-tools.nvim' -- super cool rust stuff (currently broken)(sad)
+    use "mfussenegger/nvim-dap" -- debugging support for LSP
+    use 'nvim-lualine/lualine.nvim' -- cool statusline
+    use 'akinsho/bufferline.nvim' -- tabz
+    use 'vimsence/vimsence' --discord status in vim lol
   -- Automatically set up your configuration after cloning packer.nvim NOT MY CODE
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
