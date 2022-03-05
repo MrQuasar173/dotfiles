@@ -3,6 +3,10 @@
 "/ / / / / | | | | | |/ _ \ \___ \ / _ \ | |_) | \ \ \ \ \
 "\ \ \ \ \ |_| | |_| / ___ \ ___) / ___ \|  _ <  / / / / /
  "\_\_\_\_\__\_\\___/_/   \_\____/_/   \_\_| \_\/_/_/_/_/
+ "
+ "
+ "WARNING: THIS CONFIG IS OLD AND DEPRECIATED (and it sucks) I STRONGLY
+ "RECCOMEND THE LUA CONFIG ON MY GITHUB
 
 " MrQuasar 173's VIM config
 " the only dependancies needed to run this config are vim-plug and Neovim.
@@ -153,7 +157,7 @@ let g:which_key_map.w.SPC.t = 'tab make journal entry'
 let g:which_key_map.w.SPC.w = 'make journal entry'
 let g:which_key_map.w.SPC.y = 'Make journal entry for yesterday'
 
-
+  
 " Dashboard (Home screen) Settings
 let g:dashboard_footer_icon = ' ' "  neovim loaded x plugins
 " Add custom neovim logo at top of dashboard
