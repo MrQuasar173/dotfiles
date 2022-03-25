@@ -203,3 +203,5 @@ find() {
 }
 
 . "$HOME/.cargo/env"
+#lsx
+source ~/.config/lsx/lsx.sh
