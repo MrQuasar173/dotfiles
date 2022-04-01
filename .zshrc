@@ -124,7 +124,7 @@ alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' # Make 
 alias grep='grep --color=auto' # add color to grep
 alias vim='nvim' # Use neovim, the modern and faster vim 
 alias zshrc='nvim ~/.zshrc' # Quickly open this file
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash' # Rickroll in terminal
+alias rr='curl -s -L https://raw.githubusercontent.com/BomberFish/rickrollrc-zsh/master/roll.sh | bash' # Rickroll in terminal
 # quicker cd
 alias ...='cd ../..' 
 alias .3='cd ../../..'
