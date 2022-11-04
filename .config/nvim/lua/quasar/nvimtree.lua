@@ -49,14 +49,14 @@ nvim_tree.setup {
     ignore_ft_on_setup = {
         "dashboard", --ignore when opening in dashboard
     },
-    auto_close = true,
+    -- auto_close = true,
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = true,
-    update_to_buf_dir = {
-        enable = true,
-        auto_open = true,
-    },
+    -- update_to_buf_dir = {
+        -- enable = true,
+        -- auto_open = true,
+    -- },
     diagnostics = { --show diagnostic symbol next to files
         enable = true,
         icons = {
@@ -93,10 +93,10 @@ nvim_tree.setup {
     number = false,
     relativenumber = false,
   },
-  quit_on_open = 0,
-  git_hl = 1,
-  disable_window_picker = 0,
-  root_folder_modifier = ":t",
+  -- quit_on_open = 0,
+  -- git_hl = 1,
+  -- disable_window_picker = 0,
+  -- root_folder_modifier = ":t",
   show_icons = {
     git = 1,
     folders = 1,

@@ -12,11 +12,11 @@
 set fish_greeting # Get rid of annyoing fish greeting
 
 # set autocomplete/highlight colors
-set fish_color_normal brgreen
-set fish_color_autosuggestion '#676e95'
-set fish_color_command brgreen
-set fish_color_error '#ff5370'
-set fish_color_param brgreen
+#set fish_color_normal brgreen
+#set fish_color_autosuggestion '#676e95'
+#set fish_color_command brgreen
+#set fish_color_error '#ff5370'
+#set fish_color_param brgreen
 
 #aliases
 alias mcc='meson build'

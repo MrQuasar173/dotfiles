@@ -102,6 +102,14 @@ function extract {
 fi
 }
 
+# Blur {{{
+if [[ $(ps --no-header -p $PPID -o comm) =~ '^yakuake|kitty$' ]]; then
+        for wid in $(xdotool search --pid $PPID); do
+            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+fi
+# }}}
+# Blurs Kitty terminal
+
 # load powerlevel10k configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -148,6 +156,7 @@ alias push='git push origin'
 command -v lsd > /dev/null && alias ls='lsd -l --group-dirs first' # Use lsd, the command line utility not the drug 
 # (it makes the ls output look nice)
 
+alias audvis= 'glava --desktop > /dev/null 2>&1 &'
 ##Cmatrix astheticz
 alias matrix='cmatrix -s -C cyan'
 
@@ -200,6 +209,7 @@ alias mine='sudo ~/trex/ETH-ethermine.sh' # Mine etherium in the ethermine pool 
 alias codein='sudo sh ~/scripts/codein.sh' #make editor available over ssh
 
 # Startup commands
+sh ~/scripts/glavastart.sh
 neofetch
 # saycow # generates a random rainbow cowsay character saying something random
 figlet -c "<<<QUASAR>>>" | lolcat

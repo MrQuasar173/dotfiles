@@ -151,10 +151,12 @@ cmp.setup {
         select = false,
     },
     -- show docs next to some CMP options
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- rounded boarders
+    -- documentation = {
+        -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- rounded boarders
+    -- },
+    window = {
+        documentation = cmp.config.window.bordered()
     },
-
     -- Experimantal features
     experimental = {
         ghost_text = true, --show grey suggestion text in front of cursor for top CMP option

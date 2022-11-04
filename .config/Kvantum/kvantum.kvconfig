@@ -1,2 +1,6 @@
 [General]
 theme=LayanC#
+
+[Applications]
+Default=Brave
+LayanC%23=BraveLutris
