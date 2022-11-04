@@ -9,4 +9,4 @@ vim.g.NERDSpaceDelims = 1
 
 vim.g.material_theme_style = "palenight"
 vim.g.material_terminal_italics = 1
-vim.cmd [[ colorscheme material ]] -- Lets goooo palenight poggerz
+vim.cmd [[ colorscheme catppuccin ]] -- Lets goooo kitty uwu

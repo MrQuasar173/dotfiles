@@ -66,6 +66,13 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs" -- Auto close bracket pairs
     use "wakatime/vim-wakatime" -- Interesting coding stats
     use "kaicataldo/material.vim" -- the amazing material (containing palenight and ocean) colorschemes!
+    use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+        require("catppuccin").setup {
+            flavour = "mocha" }
+    end}
     use {"hrsh7th/nvim-cmp", requires = {"hrsh7th/cmp-path", "petertriho/cmp-git", "hrsh7th/cmp-buffer", "saadparwaiz1/cmp_luasnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-cmdline"}} --autocomplete
     use {"tzachar/cmp-tabnine", opt = true, run = "./install.sh", config = function() require('quasar.tabnine') end} --tabnine ai, takes up more resources
     use {"L3MON4D3/LuaSnip", requires = {"rafamadriz/friendly-snippets"}} --snippets
